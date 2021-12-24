@@ -29,8 +29,8 @@ set _ffmpeg="C:\Program Files\ffmpeg\bin\ffmpeg.exe"
 :: DO NOT EDIT ANYTHING BELOW THIS LINE IF YOU DON'T KNOW WHAT YOU'RE DOING!
 
 
-if not exist %_mkvmerge% goto %nomkvmerge
-if not exist %_ffmpeg% goto %noffmpeg
+if not exist %_mkvmerge% goto :nomkvmerge
+if not exist %_ffmpeg% goto :noffmpeg
 if [%1]==[] goto :help
 if [%2]==[] goto :help
 if  %~x1 == .mkv goto :subtitle
