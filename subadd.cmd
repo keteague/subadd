@@ -4,12 +4,22 @@ goto :start
 File: SubAdd.cmd
 Description: Add subtitles to movie files
 Syntax: Execute the .cmd without any parameters for online help.
-Version: 0.01
+Version: 0.02
 Date: 2021-12-24
-Time: 1215
+Time: 1314
 Author: Ken Teague
 Email: kteague at pobox dot com
 License: Creative Commons Zero v1.0 Universal
+
+Changelog:
+  2021-12-24 @ 1215
+    * Initial release
+
+  2021-12-24 @ 1314
+    * Added changelog
+    * Moved original files under .\originals subdirectory.
+    * Start Explorer in CWD for the user to analyze the work that was done.
+    * Added more verbosity to output when moving and renaming files.
 
 
 :start
@@ -30,12 +40,21 @@ echo.
 :subtitle
 echo Adding subtitles...
 %_mkvmerge% -o "%~n1-sub.mkv" "%~n1.mkv" --language 0:eng --track-name 0:English "%~n2.srt"
-move "%~n1.mkv" "%~n1-nosub.mkv"
+ping -n 60 localhost >NUL
+echo Making new directory to store original files: "%~p1\original" ...
+md "%~p1\original"
+echo Moving "%~n1.mkv" to "%~p1\original" ...
+move "%~n1.mkv" "%~p1\original"
+echo Moving "%~n1.srt" to "%~p1\original" ...
+move "%~n1.srt" "%~p1\original"
+echo Renaming "%~n1-sub.mkv" to "%~n1.mkv" ...
 move "%~n1-sub.mkv" "%~n1.mkv"
 echo.
 echo DONE adding subtitles!
-echo Go check the working directory for any files that need to be cleaned up...
+echo Open "%~n1.mkv" and test the subtitles to ensur they're there and in sync.
+echo Check "%~p1" for any files that need to be cleaned up...
 echo.
+%SystemRoot%\Explorer.exe "%~p1"
 goto:eof
 
 
