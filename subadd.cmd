@@ -5,8 +5,6 @@ File: SubAdd.cmd
 Description: Add subtitles to movie files
 Syntax: Execute the .cmd without any parameters for online help.
 Version: 1.0.2021.12.24.1314
-Date: 2021-12-24
-Time: 1314
 Author: Ken Teague
 Email: kteague at pobox dot com
 License: Creative Commons Zero v1.0 Universal
