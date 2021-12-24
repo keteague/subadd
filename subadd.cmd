@@ -80,7 +80,7 @@ echo.
 echo MKVToolNix is required to add subtitles and can be obtained from:
 echo    https://www.fosshub.com/MKVToolNix.html
 echo.
-echo If you have MKVToolNix installed, did you edit %0 and set the 
+echo If MKVToolNix is installed, did you edit %0 and set the 
 echo _mkvmerge variable accordingly?
 echo.
 echo Aborting!!
@@ -96,7 +96,7 @@ echo FFMPEG is required to convert movie to MKV format and can be obtained from:
 echo     https://www.gyan.dev/ffmpeg/builds/
 echo     https://github.com/BtbN/FFmpeg-Builds/releases
 echo.
-echo If you have FFMPEG installed, did you edit %0 and set the 
+echo If FFMPEG is installed, did you edit %0 and set the 
 echo _ffmpeg variable accordingly?
 echo.
 echo Aborting!!
